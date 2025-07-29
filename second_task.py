@@ -23,7 +23,7 @@ def get_cats_info(path:str)->list:
         return list_of_cats
     except FileNotFoundError:
         print('File not found.')
-
+        
 
 cats_info = (get_cats_info('/Users/hanna/Desktop/PROJECTS/goit-algo-hw-04/cats_info.txt'))
 print(cats_info)
