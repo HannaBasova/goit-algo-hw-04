@@ -14,9 +14,9 @@ def total_salary(path):
             list_of_salary = []
             for line in lines:
                 parts = line.split(',')
-                list_of_salary.append(int(parts[1]))
+                list_of_salary.append(float(parts[1]))
         total = sum(list_of_salary)
-        average = round(total / len(list_of_salary))
+        average = (total / len(list_of_salary)) if len(list_of_salary) > 0 else 0
 
         return total, average
 
@@ -27,5 +27,6 @@ def total_salary(path):
 
 total, average = total_salary("/Users/hanna/Desktop/PROJECTS/modul_3_theory/test.txt")
 print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
+
 print(total_salary("/Users/hanna/Desktop/PROJECTS/modul_3_theory/test.txt"))
 
