@@ -17,7 +17,7 @@ def show_all_contacts(contacts):
 
 
 
-def phone_username(args,contacts: dict)-> None:
+def phone_username(args,contacts: dict)-> str|None:
     for arg in args:
         if arg in contacts:
             arg =contacts[arg]
