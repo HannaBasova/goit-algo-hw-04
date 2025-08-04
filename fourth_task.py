@@ -11,19 +11,21 @@ def change_contact(args, contacts):
     name, phone = args
     contacts[name] = phone
     return "Contact changed."
+
+
 def show_all_contacts(contacts):
-    for name, phones in contacts.items():
-        return name, phones
+    result = ''
+    for name, phone in contacts.items():
+        result = result + name + ' : ' + str(phone) + '\n'
+    return result
 
 
 
 def phone_username(args,contacts: dict)-> str|None:
-    for arg in args:
-        if arg in contacts:
-            arg =contacts[arg]
-            return arg
-        else:
-            return "No such contact."
+    if args[0] in contacts:
+        return contacts[args[0]]
+    else:
+        return "No such contact."
 
 
 
@@ -45,8 +47,7 @@ def main():
         elif command == "change":
             print(change_contact(args, contacts))
         elif command == "all":
-            for name, phones in contacts.items():
-                print(name, phones)
+            print(show_all_contacts(contacts))
         elif command == "phone":
             print(phone_username(args, contacts))
 
